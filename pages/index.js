@@ -21,7 +21,7 @@ export default function Home() {
       try {
         const data = await axios.post("/api/recipee/search", { searchVal })
         const results = JSON.parse(JSON.stringify(data.data))
-        console.log(results)
+        // console.log(results)
         setMeals(results)
       } catch (e) {
         console.log(e.message)

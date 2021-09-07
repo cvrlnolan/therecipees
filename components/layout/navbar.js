@@ -2,12 +2,25 @@ import { Menubar } from "primereact/menubar"
 
 const navItems = [
     {
-        label: "Home",
+        label: "Recipees",
         url: "/"
     },
     {
+        label: "Search by",
+        items: [
+            {
+                label: "Category",
+                url: "/categories"
+            },
+            {
+                label: "Area",
+                url: "/areas"
+            }
+        ]
+    },
+    {
         label: "Github",
-        url: "#"
+        url: "https://github.com/cvrlnolan/therecipees"
     }
 ]
 
@@ -26,7 +39,7 @@ const Navbar = ({ children }) => {
                 />
             </div>
             <div
-                className="p-d-flex p-flex-column p-as-center p-p-1"
+                className="p-d-flex p-flex-column p-as-center p-p-2"
                 style={{ width: "100vw" }}
             >
                 {children}
