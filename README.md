@@ -1,7 +1,7 @@
 # The Recipees
 
 A Next.js application fetching & displaying data from [TheMealDB](https://www.themealdb.com/) API which host a huge variety of meals data.
-Live demo available at:
+Live demo available at: https://therecipees.vercel.app/
 
 ## Description
 
