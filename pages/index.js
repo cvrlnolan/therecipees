@@ -1,3 +1,4 @@
+import React from "react"
 import Head from "next/head"
 import axios from "axios"
 import { InputText } from "primereact/inputtext"
