@@ -43,9 +43,13 @@ export default function Categories() {
     const header = renderHeader()
 
     const getMeals = async (category) => {
-        const data = await axios.post("/api/recipee/categories", { category })
-        const meals = JSON.parse(JSON.stringify(data.data))
-        setMeals(meals)
+        try {
+            const data = await axios.post("/api/recipee/categories", { category })
+            const meals = await JSON.parse(JSON.stringify(data.data))
+            setMeals(meals)
+        } catch (e) {
+            console.log(e.message)
+        }
     }
 
     return (

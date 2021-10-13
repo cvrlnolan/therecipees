@@ -43,9 +43,13 @@ export default function Categories() {
     const header = renderHeader()
 
     const getMeals = async (area) => {
-        const data = await axios.post("/api/recipee/areas", { area })
-        const meals = JSON.parse(JSON.stringify(data.data))
-        setMeals(meals)
+        try {
+            const data = await axios.post("/api/recipee/areas", { area })
+            const meals = await JSON.parse(JSON.stringify(data.data))
+            setMeals(meals)
+        } catch (e) {
+            console.log(e.message)
+        }
     }
 
     return (
@@ -57,7 +61,7 @@ export default function Categories() {
                 <div className="p-d-flex p-flex-column p-jc-center">
                     <div className="p-mx-auto p-my-2">
                         <Dropdown
-                            placeholder="Select a category"
+                            placeholder="Select area"
                             value={area}
                             options={areas}
                             onChange={(e) => {
